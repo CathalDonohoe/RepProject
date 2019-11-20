@@ -42,7 +42,7 @@ class Create extends React.Component {
       poster:this.state.Poster
     }
     axios.post('http://localhost:4000/api/tvshows',newTvShow)
-    .then()
+    .then(window.location.reload())
     .catch();
   }
 

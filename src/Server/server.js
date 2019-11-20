@@ -7,7 +7,8 @@ const cors = require('cors');
 const mongoose = require ('mongoose'); // add for mongoDB (lab8) allows to connect to database       (10)
 
 //add the following bellow for (lab8) (10)
-const mongoDB = 'mongodb+srv://admin:<admin>@cluster0-dmuq6.mongodb.net/test?retryWrites=true&w=majority';
+const mongoDB = 'mongodb+srv://admin:admin@cluster0-dmuq6.mongodb.net/test?retryWrites=true&w=majority';
+//mongodb+srv://<username>:<password>@cluster0-dmuq6.mongodb.net/test?retryWrites=true&w=majority
 mongoose.connect(mongoDB, {useNewUrlParser:true}); //connect to the database using this parser
 
 //----------------------------------------------------------------------------------------------
@@ -46,7 +47,7 @@ const tvShowSchema = new Schema({
     poster:String
 })
 
-const TvShowModel = mongoose.model('tvshow',tvShowSchema) //creates a folder called movie that links movieschema documents to it
+const TvShowModel = mongoose.model('tvShows',tvShowSchema) //creates a folder called movie that links movieschema documents to it
 
 
 
@@ -75,10 +76,10 @@ app.get('/test', (req, res) => {
 app.delete('/api/tvshows/:id',(req,res)=>{
     console.log(req.params.id); //log id to screen
 
-    MovieModel.deleteOne({_id:req.params.id},(error,data) =>{ //u pick here which one you want to delete! aka "_id"
+    TvShowModel.deleteOne({_id:req.params.id},(error,data) =>{ //u pick here which one you want to delete! aka "_id"
         if(error)
-        res.json(error);
-           res.json(data);
+            res.json(error);
+        res.json(data);
 
      })
 })//listen for an id
@@ -94,7 +95,7 @@ app.get('/api/tvShows/:id', (req,res) => {
 
 console.log(req.params.id);
 
-MovieModel.findById(req.params.id,(error,data)=>{
+TvShowModel.findById(req.params.id,(error,data)=>{
     res.json(data);
 
     })

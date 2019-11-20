@@ -82,14 +82,13 @@ class Edit extends React.Component {
   render() { //visual piece
     return (
       <div>
-      <h1>Hello from Edit component</h1>
+      <h1 style={{color: "red"}}>Type below to edit the Tv Show {this.state.Title}</h1>
       <form onSubmit={this.handleSubmit}>
 
       <div className='form-group'>
       <label>
         Tv Show title:
         </label>
-
         <input type="text" 
         className= 'form-control'
         value={this.state.Title}

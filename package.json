@@ -8,6 +8,7 @@
     "cors": "^2.8.5",
     "install": "^0.13.0",
     "mongoose": "^5.7.11",
+    "nodemon": "^1.19.4",
     "npm": "^6.13.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.15",
