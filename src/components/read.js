@@ -32,6 +32,7 @@ class Read extends React.Component{
         return(
             <div style={mystyle}>
                 <h1>Please view some poplar TV Shows below</h1>
+                <h1>Please view some poplar TV Shows below</h1>
                 <TvShows myTvShows={this.state.tvshows}></TvShows>
                 
             </div>
